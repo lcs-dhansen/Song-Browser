@@ -37,8 +37,23 @@ struct ContentView: View {
                 
             } else {
           
-                // Push the search bar to the top of the screen
-                Spacer()
+                //Search Text was given results obtained
+                //Show list of results
+                // Keypath of \.trackID tells the List view what property to use
+                //uniquely identify each song
+                List(songs, id: \.trackId) { currentSong in
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Text(currentSong.trackName)
+                            
+                        
+                        Text(currentSong.artistName)
+                            .font(.caption)
+                        
+                    }
+                    
+                }
             
             }
             
