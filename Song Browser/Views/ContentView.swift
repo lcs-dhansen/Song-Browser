@@ -22,6 +22,7 @@ struct ContentView: View {
             
             SearchBarView(text: $searchText)
                 .onChange(of: searchText) { _ in
+                    fetchSongResults()
                 }
             
             //Show a prompt when no search text is given
