@@ -44,15 +44,19 @@ struct ContentView: View {
                 //uniquely identify each song
                 List(songs, id: \.trackId) { currentSong in
                     
-                    
-                    SimpleListItemView(title: currentSong.trackName, caption: currentSong.artistName)
-                    
+                    NavigationLink(destination: SongDetailView(song: currentSong)) {
+                   
+                        SimpleListItemView(title: currentSong.trackName, caption: currentSong.artistName)
+                       
+                    }
+                                        
                 }
                 
             }
             
             
         }
+        .navigationTitle("Song Browser")
     }
     
     //MARK: Function
